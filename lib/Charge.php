@@ -1,5 +1,6 @@
 <?php
 namespace Senfenico;
+require_once(__DIR__ . '/util.php');
 
 class Charge {
     private $apiKey;

@@ -1,5 +1,6 @@
 <?php
 namespace Senfenico;
+require_once(__DIR__ . '/util.php');
 
 class Checkout {
     private $apiKey;
@@ -16,7 +17,6 @@ class Checkout {
             "success_url" => $successUrl,
             "cancel_url" => $cancelUrl,
         ];
-
         $response = makeRequest($this->apiKey, $url, "POST", $payload);
         return new SenfenicoJSON($response);
     }

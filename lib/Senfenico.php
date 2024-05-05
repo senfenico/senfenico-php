@@ -1,4 +1,6 @@
 <?php
+namespace Senfenico;
+use Exception;
 
 class Senfenico {
     private $apiKey;
@@ -9,6 +11,7 @@ class Senfenico {
 
     public function __get($name) {
         $className = ucfirst($name);
+        $className = __NAMESPACE__ . "\\$className";
         if (class_exists($className)) {
             return new $className($this->apiKey);
         }

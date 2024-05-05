@@ -61,9 +61,11 @@ function makeRequest($apiKey, $url, $method, $data = null) {
             'X-API-KEY: ' . $apiKey
         ),
     ));        
-
     $response = curl_exec($curl);
-
+    if ($response === false) {
+        echo 'Curl error: ' . curl_error($curl);
+    }
+    
     curl_close($curl);
 
     return $response;
