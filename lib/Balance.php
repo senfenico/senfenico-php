@@ -9,7 +9,7 @@ class Balance {
         $this->apiKey = $apiKey;
     }
 
-    public function fetch() {
+    public function fetch(array $options) {
         $url = "https://api.senfenico.com/v1/payment/balances";
         $response = makeRequest($this->apiKey, $url, "GET");
         return new SenfenicoJSON($response);

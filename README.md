@@ -34,8 +34,12 @@ require_once '/path/to/senfenico-php/init.php';
 Simple usage looks like:
 
 ```php
-$senfenico = new Senfenico('sk_test_...');
-$charge = $senfenico->charge->create(1000, '72xxxxxx', 'coris_bf');
+$senfenico = new \Senfenico\Senfenico('sk_test_...');
+$charge = $senfenico->charge->create([
+    'amount' => 1000,
+    'phone' => '76xxxxxx',
+    'provider' => 'orange_bf'
+]);
 echo $charge;
 ```
 

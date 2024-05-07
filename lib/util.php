@@ -11,7 +11,7 @@ class SenfenicoJSON {
     public function __get($name) {
         $value = $this->data[$name] ?? null;
         if (is_array($value)) {
-            if (array_values($value) === $value) { // Check if it's a list
+            if (array_values($value) === $value) {
                 return array_map(function ($item) {
                     return new self(json_encode($item));
                 }, $value);
